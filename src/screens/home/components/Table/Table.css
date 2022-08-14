@@ -1,24 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-
 .table-container {
     margin-top: 30px;
     background-color: #637478;
     border-radius: 10px;
-    height: 60vh;
-    max-height: 60vh;
+    height: 70vh;
+    max-height: 70vh;
     overflow-y: scroll;
 }
 
 .table {
-    margin-top: 20px;
-    padding: 0 20px;
+    padding: 0 20px 0 20px;
     text-align: left;
     width: 100%;
 }
 
-.hr-line {
-    width: 585%;
+.header-container {
+    width: 100%;
 }
 
 .error-image {
@@ -26,6 +24,7 @@
     width: 45vh;
     height: 45vh;
     margin: auto;
+    opacity: 0.8;
 }
 
 .error-msg {
@@ -36,8 +35,20 @@
     margin-top: 30px;
 }
 
+.hr-line {
+    width: available;
+}
+
+.thead {
+    background-color: #637478;
+    padding-top: 20px;
+    top: 0;
+    position: sticky;
+}
+
 .even-row {
-    height: 40px;
+    padding: 5px;
+    height: 50px;
     background-color: #1F3A44;
     color: #fff
 }
@@ -51,21 +62,39 @@
 }
 
 .odd-row {
-    height: 40px;
-    color: #fff
+    height: 50px;
+    color: #fff;
 }
 
+.link-header {
+    width: 5%;
+}
+
+.link-data {
+    text-align: center;
+}
 
 th {
-    background-color: #637478;;
+    padding-top: 20px;
+    background-color: #637478;
     color : #00EBDD;
-    width: 17%;
+    width: 20%;
 }
-
 
 th,td {
     padding-left: 20px;
 }
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #a4a4a4;
+    cursor: pointer;
+}
+
+/* Scrollbar */
 
 *::-webkit-scrollbar {
     width: 0.7em;
@@ -79,15 +108,6 @@ th,td {
 *::-webkit-scrollbar-thumb {
     background-color: #1F3A44;
     border-radius: 10px;
-}
-
-a {
-    color: #fff;
-}
-
-a:hover {
-    color: #a4a4a4;
-    cursor: pointer;
 }
 
 /* Spinner */
@@ -178,4 +198,18 @@ a:hover {
             transform: perspective(140px) rotateY(180deg);
             opacity: 0;
         }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .error-image {
+        width: 35vh;
+        height: 35vh;
+    }
+
+    .table-container {
+        height: 50vh;
+        max-height: 50vh;
+    }
+
 }

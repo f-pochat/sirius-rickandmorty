@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import './Modal.css';
+import './InfoModal.css';
 
-const Modal = (props) => {
+const InfoModal = (props) => {
 
         const [data, setData] = useState({});
         const [loading, setLoading] = useState(true);
 
+        //Request
         useEffect(() => {
                 fetch("https://rickandmortyapi.com/api/character/" + props.id)
                     .then((res) => res.json())
                     .then((res) => {
-                            console.log(res);
                             setData(res)
                             setLoading(false);
                     })
         },[]);
 
+        //Loading
         if (loading) return <p style={{color: 'white'}}>Loading...</p>
 
         return (
@@ -35,8 +36,9 @@ const Modal = (props) => {
                 <input type="text" disabled value={data.origin.name} className={'input'}/>
                 <label htmlFor="" className={'label'}>Location</label>
                 <input type="text" disabled value={data.location.name} className={'input'}/>
+                <a className='close-btn' onClick={() => props.closeModal()}>Close</a>
             </div>
     );
 }
 
-export default Modal;
+export default InfoModal;
